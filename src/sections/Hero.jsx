@@ -1,5 +1,7 @@
 import profile from "../assets/photo.png";
 
+
+
 function Hero() {
   return (
     <main
@@ -35,10 +37,10 @@ function Hero() {
 
         <div className="mt-7 flex flex-wrap justify-center gap-4 md:justify-start">
           <a
-            href="#projects"
+            href="/Black and White Minimalist Accountant Resume (1).pdf" download="Anil_cv.pdf"
             className="rounded-lg bg-primary px-5 py-3 font-medium text-white transition hover:brightness-110"
           >
-            View Projects
+            Download CV
           </a>
 
           <a
