@@ -6,6 +6,26 @@
   --color-text: #F5F5F5;
   --color-muted: #A1A1AA;
 }
+.gradient-text {
+  color: transparent;
+  background-image: linear-gradient(135deg, #7c3aed, #06b6d4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradient-front {
+   background: linear-gradient(
+    110deg,
+    #c084fc 0%,
+    #818cf8 35%,
+    #38bdf8 70%,
+    #2dd4bf 100%
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 body{
   background-color:var(--color-background);
 }
