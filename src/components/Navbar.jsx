@@ -10,7 +10,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="border-b border-white/10 bg-background/80 backdrop-blur-md">
+    <nav className="border-b border-white/10 bg-background/80 backdrop-blur-md fixed top-0 left-0 z-50 w-full mb-3 ">
 
       {/* Main Navbar */}
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
@@ -18,7 +18,7 @@ function Navbar() {
         {/* Logo */}
         <a
           href="#home"
-          className="text-xl font-bold tracking-tight text-text"
+          className="text-2xl font-bold tracking-tight text-text "
         >
           <span className="text-primary">&lt;</span>
           Anil

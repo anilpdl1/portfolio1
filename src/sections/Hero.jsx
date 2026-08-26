@@ -6,7 +6,7 @@ function Hero() {
   return (
     <main
       id="home"
-      className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-6xl flex-col items-center justify-center gap-10 px-6 md:flex-row md:gap-20 "
+      className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-6xl flex-col items-center justify-center gap-10 px-6 md:flex-row md:gap-20 mt-10"
     >
       {/* Profile Image */}
       <div className="order-1 h-56 w-56 shrink-0 overflow-hidden rounded-full md:order-2 md:h-80 md:w-80">

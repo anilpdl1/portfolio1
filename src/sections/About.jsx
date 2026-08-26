@@ -4,10 +4,10 @@ function About() {
   return (
     <section
       id="about"
-      className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-6xl flex-col justify-center px-6 py-16 md:px-12"
+      className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-6xl flex-col justify-center items-start px-6 py-16 md:px-12 scroll-reveal"
     >
       {/* Heading */}
-      <h2 className="text-4xl font-serif font-bold text-text md:text-5xl">
+      <h2 className="text-3xl font-serif font-bold text-text md:text-4xl">
         About <span className="gradient-text">me</span>
       </h2>
 
