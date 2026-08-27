@@ -3,6 +3,9 @@ import Navbar from './components/Navbar'
 import Hero from './sections/Hero'
 import Education from "./sections/Education"
 import About from './sections/About'
+import Skills from './sections/Skills'
+import Projects from './sections/Projects'
+import Contact from './sections/Contact'
 const App = () => {
   return (
     <>
@@ -10,6 +13,9 @@ const App = () => {
     <Hero/>
     <About/>
     <Education/>
+    <Skills/>
+    <Projects/>
+    <Contact/>
     </>
     
   )
