@@ -15,7 +15,7 @@ function Contact() {
     const data = new FormData(form);
 
     try {
-      const response = await fetch("https://formspree.io/f/xnpqawap", {
+      const response = await fetch("https://formspree.io/f/xnpqawap ", {
         method: "POST",
         body: data,
         headers: {
@@ -70,14 +70,14 @@ function Contact() {
 
             {/* Email */}
             <a
-              href="mailto:paudelanil714mail@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=paudelanil714@gmail.com" target='_blank'
               className="flex items-center gap-4 text-gray-300 transition hover:text-white"
             >
               <div className="rounded-lg border border-white/10 bg-white/5 p-3">
                 <Mail size={22} />
               </div>
 
-              <span>yourmail@gmail.com</span>
+              <span>paudelanil714@gmail.com</span>
             </a>
 
             {/* Location */}
