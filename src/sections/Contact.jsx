@@ -1,7 +1,41 @@
-import React from "react";
-import { Mail, Send, MapPin } from "lucide-react";
+import React, { useState } from "react";
+import { Mail, Send, MapPin, CheckCircle, X } from "lucide-react";
 
 function Contact() {
+  const [status, setStatus] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+    setStatus("");
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xnpqawap", {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      setStatus("error");
+    }
+
+    setLoading(false);
+  };
+
   return (
     <section
       id="contact"
@@ -36,7 +70,7 @@ function Contact() {
 
             {/* Email */}
             <a
-              href="mailto:yourmail@gmail.com"
+              href="mailto:paudelanil714mail@gmail.com"
               className="flex items-center gap-4 text-gray-300 transition hover:text-white"
             >
               <div className="rounded-lg border border-white/10 bg-white/5 p-3">
@@ -56,10 +90,9 @@ function Contact() {
             </div>
           </div>
 
-          {/* Contact Form */}
+          {/* Form */}
           <form
-            action="https://formspree.io/f/YOUR_FORM_ID"
-            method="POST"
+            onSubmit={handleSubmit}
             className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-md md:p-8"
           >
             <div className="flex flex-col gap-5">
@@ -97,7 +130,7 @@ function Contact() {
                   name="email"
                   placeholder="you@example.com"
                   required
-                  className="w-full rounded-lg border border-white/10 bg-black/40 px-4 py-3 text-white outline-none placeholder:text-gray-600 focus:border-white/30"
+                  className="w-full rounded-lg border border-white/10 bg-black/40 px-4 py-3 text-white outline-none placeholder:text-gray-600"
                 />
               </div>
 
@@ -116,22 +149,87 @@ function Contact() {
                   rows="5"
                   placeholder="Your message..."
                   required
-                  className="w-full resize-none rounded-lg border border-white/10 bg-black/40 px-4 py-3 text-white outline-none placeholder:text-gray-600 focus:border-white/30"
+                  className="w-full resize-none rounded-lg border border-white/10 bg-black/40 px-4 py-3 text-white outline-none placeholder:text-gray-600"
                 />
               </div>
 
               {/* Submit */}
               <button
                 type="submit"
-                className="flex items-center justify-center gap-2 rounded-lg bg-white px-5 py-3 font-medium text-black transition hover:bg-gray-200"
+                disabled={loading}
+                className="flex items-center justify-center gap-2 rounded-lg bg-white px-5 py-3 font-medium text-black transition hover:bg-gray-200 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 <Send size={18} />
-                Send Message
+
+                {loading ? "Sending..." : "Send Message"}
               </button>
             </div>
           </form>
         </div>
       </div>
+
+      {/* Success Popup */}
+      {status === "success" && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-6 backdrop-blur-sm">
+          <div className="relative w-full max-w-sm rounded-2xl border border-white/10 bg-[#111] p-8 text-center shadow-2xl">
+            <button
+              onClick={() => setStatus("")}
+              className="absolute right-4 top-4 text-gray-500 transition hover:text-white"
+            >
+              <X size={20} />
+            </button>
+
+            <CheckCircle
+              size={50}
+              className="mx-auto text-green-400"
+            />
+
+            <h3 className="mt-5 text-2xl font-semibold text-white">
+              Message Sent!
+            </h3>
+
+            <p className="mt-3 text-gray-400">
+              Thanks for reaching out. I'll get back to you soon.
+            </p>
+
+            <button
+              onClick={() => setStatus("")}
+              className="mt-6 rounded-lg bg-white px-6 py-2 text-sm font-medium text-black transition hover:bg-gray-200"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Error Popup */}
+      {status === "error" && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-6 backdrop-blur-sm">
+          <div className="relative w-full max-w-sm rounded-2xl border border-white/10 bg-[#111] p-8 text-center shadow-2xl">
+            <button
+              onClick={() => setStatus("")}
+              className="absolute right-4 top-4 text-gray-500 transition hover:text-white"
+            >
+              <X size={20} />
+            </button>
+
+            <h3 className="text-2xl font-semibold text-white">
+              Something went wrong
+            </h3>
+
+            <p className="mt-3 text-gray-400">
+              Your message couldn't be sent. Please try again.
+            </p>
+
+            <button
+              onClick={() => setStatus("")}
+              className="mt-6 rounded-lg bg-white px-6 py-2 text-sm font-medium text-black transition hover:bg-gray-200"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
