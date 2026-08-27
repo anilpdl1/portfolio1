@@ -118,10 +118,8 @@ function Navbar() {
           </a>
           <a
             href="#education"
-            target="_blank"
-            rel="noopener noreferrer"
             onClick={closeMenu}
-             className="text-xl font-medium text-muted transition-colors duration-200 hover:text-primary"
+            className="text-xl font-medium text-muted transition-colors duration-200 hover:text-primary"
           >
             Education
           </a>
