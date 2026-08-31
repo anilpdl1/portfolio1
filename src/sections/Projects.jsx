@@ -5,12 +5,17 @@ import { FaGithub } from "react-icons/fa";
 function Projects() {
   const projects = [
     {
-      title: "DevLink",
-      description:
-        "A developer networking platform where developers can showcase their skills, projects and connect with others.",
-      tech: ["React", "Node.js", "MongoDB"],
-      github: "https://github.com/yourusername/devlink",
-      live: "https://your-devlink.vercel.app",
+     
+
+  title: "Chelsea Boots Landing Page",
+  description:
+    "A modern, responsive product landing page for Chelsea boots, featuring animated sections, product cards, responsive layouts, and a clean fashion-focused UI.",
+  tech: ["React", "Tailwind CSS", "Framer Motion"],
+  github: "https://github.com/anilpdl1/landingpage",
+  live: "https://landingpage-weld-eight.vercel.app",
+
+
+
     },
 
     {

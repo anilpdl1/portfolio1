@@ -1,7 +1,4 @@
 import profile from "../assets/photo.png";
-
-
-
 function Hero() {
   return (
     <main
