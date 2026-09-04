@@ -18,14 +18,14 @@ function Projects() {
 
     },
 
-    {
-      title: "Project Two",
-      description:
-        "A full-stack application built to solve a real-world problem and practice modern web development.",
-      tech: ["React", "Node.js", "SQL"],
-      github: "https://github.com/yourusername/project-two",
-      live: "https://project-two.vercel.app",
-    },
+   {
+  title: "TaskFlow",
+  description:
+    "A modern task management dashboard designed to organize projects, track tasks, monitor progress, and improve productivity.",
+  tech: ["React", "Tailwind CSS", "React Router", "Recharts"],
+  github: "https://github.com/anilpdl1/dashboard",
+  live: "https://dashboard-theta-one-30.vercel.app/",
+},
 
     {
       title: "Project Three",
